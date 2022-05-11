@@ -1,0 +1,12 @@
+<div class="layout-topbar">
+    <a class="menu-button" (click)="onMenuButtonClick($event)">
+      <i class="pi pi-bars"></i>
+    </a>
+    <div class="p-5">{{warehouse}} - {{ dateToday }}</div>
+    <ul #topbarMenu class="topbar-menu">
+      <li>
+        <a>{{ user_type }}</a>
+      </li>
+      <li><a (click)="logout()">Logout</a></li>
+    </ul>
+  </div>

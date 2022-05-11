@@ -1,0 +1,48 @@
+<div fxLayout="row" fxLayout.xs="column" style="text-align: center;">
+    <div fxFlex="100" style="padding: 220px 0;">
+        <img id="logo" src="../../../assets/images/humidefi.png">
+    </div>
+</div>
+<div fxLayout="row" fxLayout.xs="column" style="text-align: center;background-color: #d9d9d9;">
+
+    <div fxFlex="50" style="padding-top: 100px ;">
+        <img id="logo" src="../../../assets/images/milstone.png" width="auto" height="150" >
+    </div>
+</div>
+<div fxLayout="row" fxLayout.xs="column" style="background-color: #d9d9d9;">
+
+    <div fxFlex="50" style="padding-bottom: 100px ;">
+
+        <p-timeline [value]="milestones">
+
+            <ng-template pTemplate="marker" let-milestone>
+                <!-- <span *ngIf="milestone.header == ''" class="custom-marker1 shadow-2 p-timeline-event-opposite1"
+                    [style.backgroundColor]="milestone.color">
+                    <i></i>
+                </span> -->
+                <span  class="custom-marker shadow-2"
+                    [style.backgroundColor]="milestone.color">
+                    <i></i>
+                </span>
+            </ng-template>
+
+            <ng-template pTemplate="content" let-milestone>
+                <h4 style=" color: #e0882f;">{{milestone.header}}</h4>
+                {{milestone.title}} <br>
+                {{milestone.description}}
+                <br>
+                <br>
+                <br>
+            </ng-template>
+        </p-timeline>
+    </div>
+    <div fxFlex="40" style="padding-top: 120px ;"></div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

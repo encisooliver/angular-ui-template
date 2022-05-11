@@ -1,0 +1,140 @@
+<div class="layout-sidebar" [ngClass]="{ active: active }">
+  <a routerLink="#" class="logo">
+    <img alt="logo" src="../../../assets/images/berben.png" />
+  </a>
+  <div class="layout-menu">
+    <div class="menu-category">Menu:</div>
+
+    <div class="menu-items">
+      <!-- <a routerLink="/Sales" routerLinkActive="router-link-exact-active"
+          >Sales &  Marketing</a
+        >
+        <a routerLink="/yard" routerLinkActive="router-link-exact-active"
+          >Yard Management</a
+        >
+        <a routerLink="/receiving" routerLinkActive="router-link-exact-active"
+          >Receving</a
+        >
+        <a routerLink="/storage" routerLinkActive="router-link-exact-active"
+          >Storage</a
+        >
+        <a
+          routerLink="/dispatching"
+          routerLinkActive="router-link-exact-active"
+          >Dispatching</a
+        > -->
+      <div>
+        <a tabindex="0" (click)="toggleSubmenu($event, '/sales-and-marketing')"
+          >Sales and Marketing</a
+        >
+        <div
+          [@submenu]="
+            isSubmenuActive('/sales-and-marketing') ? 'visible' : 'hidden'
+          "
+        >
+          <ul>
+            <li *ngFor="let itemSM of salesAndMarketingMenu">
+              <a
+                routerLink="{{ itemSM.link }}"
+                routerLinkActive="router-link-exact-active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >{{ itemSM.name }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <a tabindex="0" (click)="toggleSubmenu($event, '/yard-management')"
+          >Yard Management</a
+        >
+        <div
+          [@submenu]="
+            isSubmenuActive('/yard-management') ? 'visible' : 'hidden'
+          "
+        >
+          <ul>
+            <li *ngFor="let itemYM of yardsManagementMenu">
+              <a
+                routerLink="{{ itemYM.link }}"
+                routerLinkActive="router-link-exact-active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >{{ itemYM.name }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <a tabindex="0" (click)="toggleSubmenu($event, '/receiving')"
+          >Receiving</a
+        >
+        <div [@submenu]="isSubmenuActive('/receiving') ? 'visible' : 'hidden'">
+          <ul>
+            <li *ngFor="let itemRR of receivingMenu">
+              <a
+                routerLink="{{ itemRR.link }}"
+                routerLinkActive="router-link-exact-active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >{{ itemRR.name }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <a tabindex="0" (click)="toggleSubmenu($event, '/storage')">Storage</a>
+        <div [@submenu]="isSubmenuActive('/storage') ? 'visible' : 'hidden'">
+          <ul>
+            <li *ngFor="let itemSS of storageMenu">
+              <a
+                routerLink="{{ itemSS.link }}"
+                routerLinkActive="router-link-exact-active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >{{ itemSS.name }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <a tabindex="0" (click)="toggleSubmenu($event, '/dispatching')"
+          >Dispatching</a
+        >
+        <div
+          [@submenu]="isSubmenuActive('/dispatching') ? 'visible' : 'hidden'"
+        >
+          <ul>
+            <li *ngFor="let dispatch of dispatchingMenu">
+              <a
+                routerLink="{{ dispatch.link }}"
+                routerLinkActive="router-link-exact-active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >{{ dispatch.name }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <a tabindex="0" (click)="toggleSubmenu($event, '/administration')"
+          >Administration</a
+        >
+        <div
+          [@submenu]="isSubmenuActive('/administration') ? 'visible' : 'hidden'"
+        >
+          <ul>
+            <li *ngFor="let item of adminSubMenu">
+              <a
+                routerLink="{{ item.link }}"
+                routerLinkActive="router-link-exact-active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >{{ item.name }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
